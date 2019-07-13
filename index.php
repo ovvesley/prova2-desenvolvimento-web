@@ -83,8 +83,8 @@ function search_localidade($busca, $data, $arq)
 <body>
     <div class="inputs">
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <input type="text" name="localidade">
-            <input type="submit" value="buscar">
+            <input type="text" name="localidade" class="input" id="a-input">
+            <input type="submit" value="buscar" id="btn">
         </form>
     </div>
 
