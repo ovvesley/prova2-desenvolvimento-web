@@ -9,6 +9,15 @@
 </head>
 
 
+<?php
+
+    function scan_csv(){
+        $arq = fopen("data/violencia-domestica-df.csv", "r");
+        $d = fgetcsv($arq);
+        return $d;
+    }
+?>
+
 
     
 <body>
