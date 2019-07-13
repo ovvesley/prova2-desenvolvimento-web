@@ -61,6 +61,23 @@ function print_th_post($data_csv)
     echo "<th> $data_csv[6]</th>";
     echo "</thead>";
 }
+function show_csv($arq)
+{
+    $data = fgetcsv($arq);
+    $indexI = 0;
+    while ($data) {
+        if ($indexI == 0) {
+            print_th_post($data);
+        } else {
+            print_td_post($data);
+        }
+        $indexI += 1;
+        $data = fgetcsv($arq);
+    }
+
+
+    $data = fgetcsv($arq);
+}
 
 function search_localidade($busca, $data, $arq)
 {
@@ -68,7 +85,7 @@ function search_localidade($busca, $data, $arq)
     while ($data) {
         if ($indexI != 0) {
             if ($busca == $data[0]) {
-                
+
                 return $data;
             }
         }
@@ -88,9 +105,9 @@ function search_localidade($busca, $data, $arq)
         </form>
     </div>
 
-    <div id="outputs">
-        <table id="output">
-            <?php            
+    <div class="outputs">
+        <table class="output">
+            <?php
             $data = $d;
             if ($get_ano) {
                 print_th($d, $get_ano);
@@ -106,20 +123,30 @@ function search_localidade($busca, $data, $arq)
             }
             if ($post_localidade) {
                 $data_find = search_localidade($post_localidade, $data, $arq);
-                for ($i=1; $i < count($data_find) ; $i++) { 
+                for ($i = 1; $i < count($data_find); $i++) {
                     $valor += $data_find[$i];
-                                }
+                }
                 print_th_post($data);
                 print_td_post($data_find);
             }
-
             fclose($arq);
+
             ?>
         </table>
     </div>
-    <div>
-        <h3>Somatorio dos casos: <?php echo $valor; ?></h1>
-    </div>
-</body>
+    <div class="outputs">
+        <?php
+        if ($get_ano || $post_localidade) {
+            echo "<h3 id='text-soma'>Somatorio dos casos:</h3>";
+            echo "<input type='text-view' id='view-soma' class='input' value='$valor'>";
+        } else {
+            $arq2 = fopen("data/violencia-domestica-df.csv", "r");
+            echo "<table class ='output'>";
+            show_csv($arq2);
+            echo "</table>";
+            
+        }
+        fclose($arq2);
+        ?>
 
-</html>
+        </div> </body> </html>

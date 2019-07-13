@@ -12,10 +12,10 @@
     height: 60px;
     background-color: #ffffff54;
     border-radius: 50px;
-    
-}
-#b-input{
-    background-color: #ffffff54;
+    padding: 6px;
+    margin: 10px;
+    font-size: 32px;
+
 }
 
 #btn{
@@ -35,21 +35,57 @@
     color: black;
 
 }
-#output{
+.output{
     color: white;
     background-color: #212121;
-    width: 70%;
-    
+    width:700px;
 }
-#outputs{
+.outputs{
     text-align: center;
+    font-size: 18px;
+   
 }
-#outputs thead{
+.outputs thead{
     font-weight: bold;
+    font-size: 20px;
     color: #ffffff;
     background-color: black;    
 }
+#view-soma{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    font-size: 40px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: aliceblue;
+}
+#view-soma:hover{
+    background-color: #af0404;
+    color: black;
+    font-size: 40px;
+}
+#text-soma{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    font-size: 40px;
+    margin: 5px;
+    margin-bottom: -7px;
+    border: none;
+    cursor: pointer;
+    background-color: #af0404;
+    color: aliceblue;
+}
 body{
     background-color: #9b9b9b;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+    
 }
 
