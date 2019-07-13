@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.main{
+}
+
+#a-input {
+    background-color: #ffffff54;
+}
+#b-input{
+    background-color: #ffffff54;
+}
+
+#btn{
+    position: relative;
+    left: -2%;
+    width: 400px;
+    height: 80px;
+    font-size: 40px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 50px;
+    color: aliceblue;
+}
+#btn:hover{
+    background-color: white;
+    color: black;
+
+}
+#output{
+    color: white;
+    background-color: #212121;
+    width: 70%;
+    
+}
+#outputs{
+    text-align: center;
+}
+#outputs thead{
+    font-weight: bold;
+    color: #ffffff;
+    background-color: black;    
+}
+body{
+    background-color: #9b9b9b;
+}
+
