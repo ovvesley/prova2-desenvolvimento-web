@@ -10,7 +10,13 @@
 
 
 <?php
-
+    function print_td($data_csv){
+        echo "<tr>";
+        echo "<td> $data_csv[0]</td>";
+        echo "<td> $data_csv[1]</td>";
+        echo "<td> $data_csv[2]</td>"; 
+        echo "</tr>";       
+    }
     function scan_csv(){
         $arq = fopen("data/violencia-domestica-df.csv", "r");
         $d = fgetcsv($arq);
